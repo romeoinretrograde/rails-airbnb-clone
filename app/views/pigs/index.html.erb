@@ -1,2 +1,24 @@
-<h1>Pigs#index</h1>
-<p>Find me in app/views/pigs/index.html.erb</p>
+<%# navbar %>
+<div class="container">
+
+  <div class="header">
+    <h2>Pick your piggy!</h2>
+  </div>
+
+  <div class="cards-container">
+    <% @pigs.each do |pig| %>
+      <div class="card">
+
+        <div class="pig-photo">
+          <%# img %>
+        </div>
+
+        <div class="pig-info">
+          <p><%= pig.name %></p>
+          <p><%= pig.age · pig.breed · pig.price %></p>
+        </div>
+        
+      </div>
+    <% end %>
+  </div>
+</div>

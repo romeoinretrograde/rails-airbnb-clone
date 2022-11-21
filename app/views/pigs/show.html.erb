@@ -1,2 +1,20 @@
-<h1>Pigs#show</h1>
-<p>Find me in app/views/pigs/show.html.erb</p>
+<%# navbar %>
+<div class="container">
+  <div class="pig-photo-show">
+  <%# img %>
+  </div>
+  <div class="pig-info-show">
+    <h2><%= @pig.name %></h2>
+
+    <div class="basic-info">
+      <p>Age: <%= @pig.age %></p>
+      <p>Breed: <%= @pig.breed %></p>
+      <p>Owner: <%= @pig.user %></p>
+    </div>
+
+    <div class="details">
+    <p><%= @pig.details %></p>
+    </div>
+    
+  </div>
+</div>
