@@ -1,12 +1,20 @@
-.navbar-lewagon {
+// Aqui é a navbar toda
+.navbar-pig {
   justify-content: space-between;
-  background: white;
+  background: rgb(230, 195, 235);
+  border-width: 10px;
 }
 
-.navbar-lewagon .navbar-collapse {
+// Aqui a dropddown do avatar
+.navbar-pig .navbar-collapse {
   flex-grow: 0;
+  align-content: center;
+    height: 30px;
+  overflow: hidden;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+// aqui é o icon do porco
+.navbar-pig .navbar-brand img {
+  width: 50px;
+  border-radius: 12px;
 }
