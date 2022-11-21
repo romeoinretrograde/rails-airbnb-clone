@@ -1,2 +1,10 @@
-<h1>Pigs#new</h1>
-<p>Find me in app/views/pigs/new.html.erb</p>
+<%# navbar %>
+<div class="form">
+<%= simple_form for @pig do |f| %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :breed %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
+</div>
