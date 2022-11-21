@@ -13,7 +13,7 @@ class PigsController < ApplicationController
   end
 
   def create
-    @pig = Pig.new(params[:pig])
+    @pig = Pig.new(params[:pig_params])
     if @pig.save
       redirect_to pig_path(@pig), status: :see_other
     else
