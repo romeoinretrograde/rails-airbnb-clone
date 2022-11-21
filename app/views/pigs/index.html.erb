@@ -10,14 +10,14 @@
       <div class="card">
 
         <div class="pig-photo">
-          <%# img %>
+          <%= cl_image_tag pig.photo.key %>
         </div>
 
         <div class="pig-info">
           <p><%= pig.name %></p>
-          <p><%= pig.age · pig.breed · pig.price %></p>
+          <p><%= "#{pig.age} · #{pig.breed} · #{pig.price}" %></p>
         </div>
-        
+
       </div>
     <% end %>
   </div>

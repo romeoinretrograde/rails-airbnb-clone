@@ -1,9 +1,11 @@
 <%# navbar %>
 <div class="form">
-<%= simple_form for @pig do |f| %>
+<%= simple_form_for @pig do |f| %>
   <%= f.input :name %>
   <%= f.input :age %>
   <%= f.input :breed %>
+  <%= f.input :details %>
+  <%= f.input :price %>
   <%= f.input :photo, as: :file %>
   <%= f.submit %>
 <% end %>
