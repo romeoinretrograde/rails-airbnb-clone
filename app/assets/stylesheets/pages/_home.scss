@@ -1,1 +1,23 @@
 // Specific CSS for your home-page
+.intro {
+  text-align: center;
+  font-family: Palanquin Dark;
+}
+
+.card-samples {
+  display: flex;
+  justify-content: space-evenly;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px
+}
+
+.piggy-image-sample {
+  border-radius: 100px;
+}
+
+.piggy-info-sample {
+  background-color: rgb(255, 255, 205);
+  box-shadow: 2px 2px 3px rgb(174, 174, 174);
+  margin-top: 10px;
+  padding-left: 5px;
+}

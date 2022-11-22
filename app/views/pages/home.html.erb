@@ -1,8 +1,22 @@
 <%= render "shared/banner" %>
 <div class="container">
-  <div>
+  <div class="intro">
     <p>Are you feeling down and would like some company?</p>
-    <p>Does your child love pigs and would love to spend a day with one?</p>
-    <h3>Pick-A-Piggy is here to unite you with the perfect piggy!</h3>
+    <%# <p>Does your family love pigs and would love to spend a day with one?</p> %>
+    <p>Wishing for an empathic companion for a day?</p>
+    <h3><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
   </div>
+  <div>
+  </div>
+
+  <div class="card-samples" id="sample-pigs">
+    <% @pigs.each do |pig| %>
+      <div class="piggy-card-sample">
+        <%= image_tag(pig.photo, size: "200", class: "piggy-image-sample") %>
+        <div class="piggy-info-sample">
+          <h2><%= pig.name %></h2>
+          <p><%= pig.breed %></p>
+        </div>
+      </div>
+  <% end %>
 </div>
