@@ -1,19 +1,33 @@
-<div class="container">
-  <div class="pig-photo-show">
-    <%= cl_image_tag @pig.photo.key %>
-  </div>
-  <div class="pig-info-show">
-    <h2><%= @pig.name %></h2>
+<div class="show-container">
+  <div class="card-trip">
+    <%= cl_image_tag @pig.photo.key, size: "500" %>
+  <div class="card-trip-infos">
+    <div>
+      <h2 class="pig-name"><%= @pig.name %></h2>
 
-    <div class="basic-info">
-      <p>Age: <%= @pig.age %></p>
-      <p>Breed: <%= @pig.breed %></p>
-      <p>Owner: <%= @pig.user %></p>
+          <p>Age: <%= @pig.age %></p>
+          <p>Breed: <%= @pig.breed %></p>
+          <p>Owner: <%= @pig.user %></p>
+
+        <h2 class="card-trip-pricing">
+        <p><%= @pig.details %></p>
+        </h2>
     </div>
-
-    <div class="details">
-    <p><%= @pig.details %></p>
-    </div>
-
   </div>
+
+</div>
+
+<div class="booking">
+  <h2>Book your dates!</h2>
+
+  <form action="#">
+
+    <label for="arrival">From</label>
+    <input type="date" id="arrival" class="form-control mb-3">
+
+    <label for="departure">Until</label>
+    <input type="date" id="departure" class="form-control mb-3">
+
+    <input type="submit" class="form-control btn-primary">
+  </form>
 </div>
