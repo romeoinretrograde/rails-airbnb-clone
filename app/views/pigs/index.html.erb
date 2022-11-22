@@ -1,23 +1,27 @@
 <div class="container">
 
   <div class="header">
-    <h2>Pick your piggy!</h2>
+    <h1>Pick your piggy!</h1>
   </div>
 
   <div class="cards-container">
     <% @pigs.each do |pig| %>
-      <div class="card">
-
-        <div class="pig-photo">
-          <%= cl_image_tag pig.photo.key %>
+      <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
+        <div class="card-pig card-shadow col-lg-4 col-md-6 col-sm-12 col-12">
+          <div class="pig-image">
+            <%= cl_image_tag pig.photo.key %>
+          </div>
+          <div class="card-pig-info">
+            <div class="pig-name-details">
+              <h2><%= pig.name %></h2>
+              <p><%= "#{pig.age} · #{pig.breed}" %></p>
+            </div>
+            <div class="pig-price">
+              <h2><%= "#{pig.price} €" %></h2>
+            </div>
+          </div>
         </div>
-
-        <div class="pig-info">
-          <p><%= pig.name %></p>
-          <p><%= "#{pig.age} · #{pig.breed} · #{pig.price}" %></p>
-        </div>
-
-      </div>
+      <% end %>
     <% end %>
   </div>
 </div>

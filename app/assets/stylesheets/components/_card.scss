@@ -1,0 +1,36 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 30px;
+}
+
+.card-pig {
+  width: 250px;
+  background-color: white;
+  border-radius: 10px
+}
+
+.card-pig img {
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
+}
+
+.card-pig-info {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.card-pig-info h2, .card-pig-info p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: black
+}
+
+.card-shadow {
+  box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
