@@ -1,33 +1,28 @@
 <div class="background">
-<div class="container index-container">
+  <div class="container index-container">
+    <div class="header mt-4">
+      <h1>Pick your piggy!</h1>
+    </div>
 
-<<<<<<< HEAD
-  <div class="header mt-4">
-=======
-  <div class="header">
->>>>>>> master
-    <h1>Pick your piggy!</h1>
-  </div>
-
-  <div class="cards-container mb-4">
-    <% @pigs.each do |pig| %>
-      <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
-        <div class="card-pig card-shadow col-lg-4 col-md-6 col-sm-12 col-12">
-          <div class="pig-image">
-            <%= cl_image_tag pig.photo.key %>
-          </div>
-          <div class="card-pig-info">
-            <div class="pig-name-details">
-              <h2><%= pig.name %></h2>
-              <p><%= "#{pig.age} · #{pig.breed}" %></p>
+    <div class="cards-container mb-4">
+      <% @pigs.each do |pig| %>
+        <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
+          <div class="card-pig card-shadow col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="pig-image">
+              <%= cl_image_tag pig.photo.key %>
             </div>
-            <div class="pig-price">
-              <h2><%= "#{pig.price} €" %></h2>
+            <div class="card-pig-info">
+              <div class="pig-name-details">
+                <h2><%= pig.name %></h2>
+                <p><%= "#{pig.age} · #{pig.breed}" %></p>
+              </div>
+              <div class="pig-price">
+                <h2><%= "#{pig.price} €" %></h2>
+              </div>
             </div>
           </div>
-        </div>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
-</div>
 </div>
