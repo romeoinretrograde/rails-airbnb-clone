@@ -1,7 +1,43 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+require "open-uri"
+
+puts "Cleaning the DB"
+
+Pig.destroy_all
+User.destroy_all
+
+puts "creating owner of pigs"
+
+owner = User.create(email: "pig@master.com", password: "123456")
+pig_photos = [
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg",
+  "https://2.bp.blogspot.com/-YmNpgMZE9Aw/T9xGjf6FcgI/AAAAAAAACW0/Iww9y7iWjSg/s1600/Pig+image.jpg"
+]
+
+puts "generating new pigs"
+
+20.times do |i|
+  file = URI.open(pig_photos[i-1])
+  pig = Pig.new(name: Faker::Creature::Dog.name, age: rand(1..10), details: Faker::Lorem.sentence, breed: ["Pot Bellied", "Miniature", "Kune Kune"].sample, user: owner)
+  pig.photo.attach(io: file, filename: "piggy-#{i}", content_type: "image/png")
+  pig.save
+end
+
+puts "Finished"

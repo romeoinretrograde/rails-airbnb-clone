@@ -1,2 +1,12 @@
-<h1>Pigs#new</h1>
-<p>Hello ! </p>
+<%= render "shared/navbar" %>
+<div class="form">
+<%= simple_form_for @pig do |f| %>
+  <%= f.input :name %>
+  <%= f.input :age %>
+  <%= f.input :breed %>
+  <%= f.input :details %>
+  <%= f.input :price %>
+  <%= f.input :photo, as: :file %>
+  <%= f.submit %>
+<% end %>
+</div>
