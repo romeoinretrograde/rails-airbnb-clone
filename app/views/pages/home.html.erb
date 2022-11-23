@@ -6,10 +6,9 @@
     <p>Wishing for an empathic companion for a day?</p>
     <h3><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
   </div>
-  <div>
-  </div>
+</div>
 
-  <div class="card-samples" id="sample-pigs">
+<div class="card-samples" id="sample-pigs">
     <% @pigs.each do |pig| %>
       <div class="piggy-card-sample">
         <%= image_tag(pig.photo, size: "200", class: "piggy-image-sample") %>
