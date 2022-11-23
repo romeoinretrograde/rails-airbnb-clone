@@ -7,7 +7,7 @@
 
     <div class="cards-container">
       <% @pigs.each do |pig| %>
-        <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
+        <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center piggy-link" do %>
           <div class="card-pig card-shadow col-lg-4 col-md-6 col-sm-12 col-12">
             <div class="pig-image">
               <%= cl_image_tag pig.photo.key %>
