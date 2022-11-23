@@ -1,30 +1,32 @@
 <%= render "shared/banner" %>
 <div class="container">
   <div class="intro">
-    <p>Are you feeling down and would like some company?</p>
-    <%# <p>Does your family love pigs and would love to spend a day with one?</p> %>
-    <p>Wishing for an empathic companion for a day?</p>
-    <h3 class="mb-5"><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
+    <h6>Are you feeling down and would like some company?</h6>
+    <h6>Are you a pig lover like us, and would love to experience a day with one?</h6>
+    <h6>Wishing for an empathic companion for a day?</h6>
+    <h2 class="mb-2 mt-5"><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
+    <h3><i class="fa-solid fa-heart"></i></h3>
+    <h3 class="mb-5"><%= "#{@pigs[0].name}, #{@pigs[1].name} and #{@pigs[2].name} await your cuddles!" %></h3>
   </div>
-</div>
 
-<div class="card-samples mb-5" id="sample-pigs">
-     <% @pigs.each do |pig| %>
-        <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center piggy-link" do %>
-          <div class="card-pig card-shadow col-lg-4 col-md-6 col-sm-12 col-12">
-            <div class="pig-image">
-              <%= cl_image_tag pig.photo.key %>
-            </div>
-            <div class="card-pig-info">
-              <div class="pig-name-details">
-                <h2><%= pig.name %></h2>
-                <p><%= "#{pig.age} · #{pig.breed}" %></p>
+  <div class="card-samples mb-5" id="sample-pigs">
+      <% @pigs.each do |pig| %>
+          <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
+            <div class="card-pig card-shadow">
+              <div class="pig-image">
+                <%= cl_image_tag pig.photo.key %>
               </div>
-              <div class="pig-price">
-                <h2><%= "#{pig.price} €" %></h2>
+              <div class="card-pig-info">
+                <div class="pig-name-details">
+                  <h2><%= pig.name %></h2>
+                  <p><%= "#{pig.age} months · #{pig.breed}" %></p>
+                </div>
+                <div class="pig-price">
+                  <h2><%= "#{pig.price} €" %></h2>
+                </div>
               </div>
             </div>
-          </div>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+</div>

@@ -7,15 +7,15 @@
 
     <div class="cards-container">
       <% @pigs.each do |pig| %>
-        <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center piggy-link" do %>
-          <div class="card-pig card-shadow col-lg-4 col-md-6 col-sm-12 col-12">
+        <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
+          <div class="card-pig card-shadow">
             <div class="pig-image">
               <%= cl_image_tag pig.photo.key %>
             </div>
             <div class="card-pig-info">
               <div class="pig-name-details">
                 <h2><%= pig.name %></h2>
-                <p><%= "#{pig.age} · #{pig.breed}" %></p>
+                <p><%= "#{pig.age} months · #{pig.breed}" %></p>
               </div>
               <div class="pig-price">
                 <h2><%= "#{pig.price} €" %></h2>
