@@ -4,14 +4,12 @@
       <div class="card-piggy">
         <%= cl_image_tag @pig.photo.key %>
       <div class="card-piggy-infos">
-        <div class="card-piggy-details">
-          <h2 class="pig-name"><%= @pig.name %></h2>
-              <p><strong>Age</strong>: <%= @pig.age %></p>
-              <p><strong>Breed</strong>: <%= @pig.breed %></p>
-              <p><strong>Owner</strong>: <%= @pig.user.email %></p>
-              <p><strong>About</strong>: <%= @pig.details %></p>
-            </h2>
-        </div>
+        <h2 class="pig-name"><%= @pig.name %></h2>
+        <p><strong>Age</strong>: <%= @pig.age %></p>
+        <p><strong>Breed</strong>: <%= @pig.breed %></p>
+        <p><strong>Owner</strong>: <%= @pig.user.email %></p>
+        <p><strong>About</strong>: <%= @pig.details %></p>
+        <p class="card-piggy-price"><%#= @pig.price %> 7$</p>
       </div>
     </div>
   </div>
