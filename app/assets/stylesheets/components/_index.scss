@@ -1,12 +1,8 @@
-// Import your components CSS files here.
+// Here's where you import everything. DON'T put the index's CSS in here, do it in pigs/_home.scss
 @import "alert";
 @import "avatar";
 @import "form_legend_clear";
 @import "navbar";
-@import "card";
+@import "pigcard";
+@import "showcard";
 @import "banner";
-
-.header {
-  text-align: center;
-  padding: 50px;
-}
