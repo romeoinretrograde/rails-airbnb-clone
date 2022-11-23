@@ -36,9 +36,15 @@
 
 a {
   text-decoration: none;
-  color: black
+  color: rgb(54, 27, 66)
 }
 
 .card-shadow {
   box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.piggy-link {
+  &:hover {
+    color: rgb(117, 59, 122);
+  }
 }
