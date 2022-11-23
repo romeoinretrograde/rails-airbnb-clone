@@ -1,20 +1,23 @@
 <div class="show-container">
   <div class="row">
-    <div class="col-12 col-lg-8">
+    <div class="col col-lg-8">
       <div class="card-piggy">
         <%= cl_image_tag @pig.photo.key %>
-      <div class="card-piggy-infos">
-        <h2 class="pig-name"><%= @pig.name %></h2>
-        <p><strong>Age</strong>: <%= @pig.age %></p>
-        <p><strong>Breed</strong>: <%= @pig.breed %></p>
-        <p><strong>Owner</strong>: <%= @pig.user.email %></p>
-        <p><strong>About</strong>: <%= @pig.details %></p>
         <p class="card-piggy-price"><%#= @pig.price %> 7$</p>
       </div>
+      <div class="about-piggy">
+        <h3><strong>About</strong>:</h3>
+        <p> <%= @pig.details %></p>
+      </div>
     </div>
-  </div>
+    <div class="col col-lg-4">
+      <div class="card-piggy-infos">
+              <h2 class="pig-name"><%= @pig.name %></h2>
+              <p><strong>Age</strong>: <%= @pig.age %></p>
+              <p><strong>Breed</strong>: <%= @pig.breed %></p>
+              <p><strong>Owner</strong>: <%= @pig.user.email %></p>
+      </div>
 
-    <div class="col-12 col-lg-4">
       <div class="booking">
         <h2>Book your dates!</h2>
 

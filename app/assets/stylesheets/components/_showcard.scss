@@ -10,18 +10,16 @@
   text-shadow: 2px 2px 2px rgb(230, 195, 235);
 }
 
-.card-piggy {
-  overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 10px;
+.card-piggy{
+  position: relative;
 }
 
 .card-piggy > img {
-  height: 350px;
   width: 100%;
-  object-fit: cover;
+  height: 100%;
+  object-fit: fill;
   object-position: center;
+  border-radius: 15px;
 }
 
 .card-piggy h2 {
@@ -30,21 +28,46 @@
   margin: 0;
 }
 
-.card-piggy p {
-  font-size: 12px;
-  opacity: .7;
-  margin: 0;
-}
+// .card-piggy p {
+//   font-size: 12px;
+//   opacity: .7;
+//   margin: 0;
+// }
 
 .card-piggy-infos {
-  position: relative;
+  margin: 10px;
   padding: 8px 12px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
 
 .card-piggy-price {
   position: absolute;
-  top: 8px;
-  right: 16px;
+  bottom: -17px;
+  left: 0px;
   font-size: 30px !important;
   font-weight: bold;
+  background-color: white;
+  border-bottom-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+.booking {
+  padding: 15px;
+  margin: 10px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
+}
+
+.about-piggy{
+  padding: 10px;
+  margin-top: 20px;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
