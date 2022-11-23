@@ -1,7 +1,7 @@
 <div class="show-container">
-  <div class="card-trip">
+  <div class="card-piggy">
     <%= cl_image_tag @pig.photo.key, size: "500" %>
-  <div class="card-trip-infos">
+  <div class="card-piggy-infos">
     <div>
       <h2 class="pig-name"><%= @pig.name %></h2>
 
@@ -9,7 +9,7 @@
           <p>Breed: <%= @pig.breed %></p>
           <p>Owner: <%= @pig.user %></p>
 
-        <h2 class="card-trip-pricing">
+        <h2 class="card-piggy-pricing">
         <p><%= @pig.details %></p>
         </h2>
     </div>
