@@ -4,18 +4,27 @@
     <p>Are you feeling down and would like some company?</p>
     <%# <p>Does your family love pigs and would love to spend a day with one?</p> %>
     <p>Wishing for an empathic companion for a day?</p>
-    <h3><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
+    <h3 class="mb-5"><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
   </div>
 </div>
 
-<div class="card-samples" id="sample-pigs">
-    <% @pigs.each do |pig| %>
-      <div class="piggy-card-sample">
-        <%= image_tag(pig.photo, size: "200", class: "piggy-image-sample") %>
-        <div class="piggy-info-sample">
-          <h2><%= pig.name %></h2>
-          <p><%= pig.breed %></p>
-        </div>
-      </div>
-  <% end %>
-</div>
+<div class="card-samples mb-5" id="sample-pigs">
+     <% @pigs.each do |pig| %>
+        <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
+          <div class="card-pig card-shadow col-lg-4 col-md-6 col-sm-12 col-12">
+            <div class="pig-image">
+              <%= cl_image_tag pig.photo.key %>
+            </div>
+            <div class="card-pig-info">
+              <div class="pig-name-details">
+                <h2><%= pig.name %></h2>
+                <p><%= "#{pig.age} · #{pig.breed}" %></p>
+              </div>
+              <div class="pig-price">
+                <h2><%= "#{pig.price} €" %></h2>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
