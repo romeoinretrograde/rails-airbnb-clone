@@ -2,12 +2,12 @@
   <div class="card-piggy">
     <%= cl_image_tag @pig.photo.key, size: "500" %>
   <div class="card-piggy-infos">
-    <div>
+    <div class="card-piggy-details">
       <h2 class="pig-name"><%= @pig.name %></h2>
 
           <p>Age: <%= @pig.age %></p>
           <p>Breed: <%= @pig.breed %></p>
-          <p>Owner: <%= @pig.user %></p>
+          <p>Owner: <%= @pig.user.email %></p>
 
         <h2 class="card-piggy-pricing">
         <p><%= @pig.details %></p>
