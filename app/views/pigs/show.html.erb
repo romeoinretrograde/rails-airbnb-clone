@@ -1,33 +1,34 @@
 <div class="show-container">
-  <div class="card-piggy">
-    <%= cl_image_tag @pig.photo.key, size: "500" %>
-  <div class="card-piggy-infos">
-    <div>
-      <h2 class="pig-name"><%= @pig.name %></h2>
-
-          <p>Age: <%= @pig.age %></p>
-          <p>Breed: <%= @pig.breed %></p>
-          <p>Owner: <%= @pig.user %></p>
-
-        <h2 class="card-piggy-pricing">
-        <p><%= @pig.details %></p>
-        </h2>
+  <div class="row">
+    <div class="col-12 col-lg-8">
+      <div class="card-piggy">
+        <%= cl_image_tag @pig.photo.key %>
+      <div class="card-piggy-infos">
+        <h2 class="pig-name"><%= @pig.name %></h2>
+        <p><strong>Age</strong>: <%= @pig.age %></p>
+        <p><strong>Breed</strong>: <%= @pig.breed %></p>
+        <p><strong>Owner</strong>: <%= @pig.user.email %></p>
+        <p><strong>About</strong>: <%= @pig.details %></p>
+        <p class="card-piggy-price"><%#= @pig.price %> 7$</p>
+      </div>
     </div>
   </div>
 
-</div>
+    <div class="col-12 col-lg-4">
+      <div class="booking">
+        <h2>Book your dates!</h2>
 
-<div class="booking">
-  <h2>Book your dates!</h2>
+        <form action="#">
 
-  <form action="#">
+          <label for="arrival">From</label>
+          <input type="date" id="arrival" class="form-control mb-3">
 
-    <label for="arrival">From</label>
-    <input type="date" id="arrival" class="form-control mb-3">
+          <label for="departure">Until</label>
+          <input type="date" id="departure" class="form-control mb-3">
 
-    <label for="departure">Until</label>
-    <input type="date" id="departure" class="form-control mb-3">
-
-    <input type="submit" class="form-control btn-primary">
-  </form>
+          <input type="submit" class="form-control btn-primary">
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
