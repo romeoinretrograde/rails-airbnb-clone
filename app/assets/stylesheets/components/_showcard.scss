@@ -11,10 +11,10 @@
 }
 
 .card-piggy {
-  height: 460px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 10px;
 }
 
 .card-piggy > img {
@@ -36,19 +36,15 @@
   margin: 0;
 }
 
-
-.card-piggy .card-piggy-infos {
-  padding: 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  position: relative;
-}
-
 .card-piggy-infos {
-  position: absolute;
-  right: 5px;
-  top: -7px;
-  width: 250px;
+  position: relative;
+  padding: 8px 12px;
 }
 
+.card-piggy-price {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 30px !important;
+  font-weight: bold;
+}
