@@ -6,8 +6,11 @@
 
 .card-samples {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px
 }
 
+.body h1, h2, h3, p {
+  color: rgb(54, 27, 66);
+}
