@@ -1,11 +1,20 @@
 <div class="background">
   <div class="container index-container">
+<<<<<<< HEAD
     <div class="header mt-4">
       <h1>Pick your piggy!</h1>
     </div>
   </div>
 
     <div class="cards-container mb-4">
+=======
+
+    <div class="header">
+      <h1>Pick your piggy!</h1>
+    </div>
+
+    <div class="cards-container">
+>>>>>>> master
       <% @pigs.each do |pig| %>
         <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
           <div class="card-pig card-shadow col-lg-4 col-md-6 col-sm-12 col-12">
