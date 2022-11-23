@@ -10,13 +10,8 @@
   text-shadow: 2px 2px 2px rgb(230, 195, 235);
 }
 
-.basic-info {
-
-}
-
-
 .card-piggy {
-  height: 500px;
+  height: 460px;
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -26,6 +21,7 @@
   height: 350px;
   width: 100%;
   object-fit: cover;
+  object-position: center;
 }
 
 .card-piggy h2 {
@@ -52,6 +48,7 @@
 .card-piggy-infos {
   position: absolute;
   right: 5px;
-  top: -10px;
+  top: -7px;
   width: 250px;
 }
+
