@@ -9,7 +9,6 @@
     <h3 class="mb-5"><%= "#{@pigs[0].name}, #{@pigs[1].name} and #{@pigs[2].name} await your cuddles!" %></h3>
   </div>
 
-
   <div class="card-samples mb-5" id="sample-pigs">
       <% @pigs.each do |pig| %>
           <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
