@@ -1,11 +1,11 @@
 .footer {
-  background: rgb(230, 195, 235);
+  background: $pink;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 83px;
   padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
+  color: rgb(181, 120, 177);
 }
 .footer-links {
   display: flex;
@@ -29,4 +29,8 @@
 }
 .footer-links a:hover {
   opacity: 0.6;
+}
+
+.made-with{
+  color: rgb(94, 14, 78)
 }
