@@ -13,6 +13,8 @@
   background-color: white;
   border-radius: 10px;
   margin: 2%;
+  object-fit: cover;
+  object-position: center;
 }
 
 .card-pig img {
@@ -25,7 +27,7 @@
 
 .pig-image {
   width: 100%;
-  height: 220px;
+  height: 250px;
 }
 
 .card-pig-info {

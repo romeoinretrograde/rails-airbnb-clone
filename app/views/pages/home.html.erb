@@ -1,35 +1,32 @@
 <%= render "shared/banner" %>
 <div class="container">
-  <div class="intro">
+    <div class="intro">
+      <h2 class="mb-2 mt-5"><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
+      <h3><i class="fa-solid fa-heart"></i></h3>
+      <h3 class="mb-5"><%= "#{@pigs[0].name}, #{@pigs[1].name} and #{@pigs[2].name} are some of the piggys that await your cuddles!" %></h3>
 
-    <h2 class="mb-2 mt-5"><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
-    <h3><i class="fa-solid fa-heart"></i></h3>
-    <h3 class="mb-5"><%= "#{@pigs[0].name}, #{@pigs[1].name} and #{@pigs[2].name} are some of the piggys that await your cuddles!" %></h3>
+    </div>
 
-  </div>
-
-  <div class="card-samples mb-5 mx-5" id="sample-pigs">
-      <% @pigs.each do |pig| %>
-          <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
-            <div class="card-pig card-shadow">
-              <div class="pig-image">
-                <%= cl_image_tag pig.photo.key %>
-              </div>
-              <div class="card-pig-info">
-                <div class="pig-name-details">
-                  <h2><%= pig.name %></h2>
-                  <p><%= "#{pig.age} months · #{pig.breed}" %></p>
+    <div class="card-samples mb-5 mx-5" id="sample-pigs">
+        <% @pigs.each do |pig| %>
+            <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
+              <div class="card-pig card-shadow" style="width: 350px">
+                <div class="pig-image">
+                  <%= cl_image_tag pig.photo.key %>
                 </div>
-                <div class="pig-price">
-                  <h2><%= "#{pig.price} €" %></h2>
+                <div class="card-pig-info">
+                  <div class="pig-name-details">
+                    <h2 style="text-align: left"><%= pig.name %></h2>
+                    <p style="text-align: left"><%= "#{pig.age} months · #{pig.breed}" %></p>
+                  </div>
+                  <div class="pig-price">
+                    <h2><%= "#{pig.price} €" %></h2>
+                  </div>
                 </div>
               </div>
-            </div>
-          <% end %>
+            <% end %>
         <% end %>
-      </div>
+    </div>
       <h3 class = "h3-sign">
-        <%= link_to "Sign up", new_user_registration_path, class: "btn-pink" %>
-        to see all our piggys
-      </h3>
+        <%= link_to "Sign up", new_user_registration_path, class: "btn-pink" %> to see all our pigs...</h3>
 </div>
