@@ -1,9 +1,9 @@
 <div class="show-container">
-  <div class="row">
+  <div class="row w-100">
     <div class="col col-lg-8">
       <div class="card-piggy">
         <%= cl_image_tag @pig.photo.key %>
-        <p class="card-piggy-price"><%#= @pig.price %> 7$</p>
+        <p class="card-piggy-price"><strong><%#= @pig.price %> 7 € </strong>/ per day</p>
       </div>
       <div class="about-piggy">
         <h3><strong>About</strong>:</h3>
@@ -11,26 +11,29 @@
       </div>
     </div>
     <div class="col col-lg-4">
-      <div class="card-piggy-infos">
-              <h2 class="pig-name"><%= @pig.name %></h2>
-              <p><strong>Age</strong>: <%= @pig.age %></p>
-              <p><strong>Breed</strong>: <%= @pig.breed %></p>
-              <p><strong>Owner</strong>: <%= @pig.user.email %></p>
-      </div>
+      <div class="card-piggy-right">
+        <div class="card-piggy-infos">
+                <h2 class="pig-name"><%= @pig.name %></h2>
+                <p><strong>Age</strong>: <%= @pig.age %></p>
+                <p><strong>Breed</strong>: <%= @pig.breed %></p>
+                <p><strong>Owner</strong>: <%= @pig.user.email %></p>
+        </div>
 
-      <div class="booking">
-        <h2>Book your dates!</h2>
+        <div class="booking flex-grow-1 d-flex flex-column">
+          <h2>Book your dates!</h2>
 
-        <form action="#">
+          <form action="#" class="d-flex flex-column justify-content-between flex-grow-1">
+            <div>
+              <label for="arrival">From</label>
+              <input type="date" id="arrival" class="form-control mb-3">
 
-          <label for="arrival">From</label>
-          <input type="date" id="arrival" class="form-control mb-3">
+              <label for="departure">Until</label>
+              <input type="date" id="departure" class="form-control mb-3">
+            </div>
 
-          <label for="departure">Until</label>
-          <input type="date" id="departure" class="form-control mb-3">
-
-          <input type="submit" class="form-control btn-primary">
-        </form>
+            <%= link_to "Book now", "#", class: "btn btn-flat" %>
+          </form>
+        </div>
       </div>
     </div>
   </div>

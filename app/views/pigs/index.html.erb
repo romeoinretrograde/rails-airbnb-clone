@@ -2,7 +2,19 @@
   <div class="container index-container">
     <div class="header">
       <h1>Pick your piggy!</h1>
+      <h6>They're so excited to meet you!</h6>
     </div>
+  </div>
+
+  <div class="searchbar">
+      <%= form_with url: pigs_path, method: :get, class: "d-flex" do %>
+        <%= text_field_tag :query,
+            params[:query],
+            class: "form-control",
+            placeholder: "Look for piglets..."
+        %>
+        <%= submit_tag "Search", class:"btn-pig" %>
+        <% end %>
   </div>
 
     <div class="cards-container">
