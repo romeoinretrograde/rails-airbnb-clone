@@ -8,7 +8,7 @@
 
   </div>
 
-  <div class="card-samples mb-5" id="sample-pigs">
+  <div class="card-samples mb-5 mx-5" id="sample-pigs">
       <% @pigs.each do |pig| %>
           <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
             <div class="card-pig card-shadow">
@@ -28,5 +28,8 @@
           <% end %>
         <% end %>
       </div>
-      <h3 class = "h3-sign"><strong>Sign up</strong> to see all our piggys</h3>
+      <h3 class = "h3-sign">
+        <%= link_to "Sign up", new_user_registration_path, class: "btn-pink" %>
+        to see all our piggys
+      </h3>
 </div>
