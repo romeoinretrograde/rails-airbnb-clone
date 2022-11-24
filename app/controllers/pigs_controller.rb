@@ -1,7 +1,11 @@
 class PigsController < ApplicationController
 
   def index
-    @pigs = Pig.all
+    if params[:query].present?
+      @pigs = Pig.global_search(params[:query])
+    else
+      @pigs = Pig.all
+    end
   end
 
   def show
