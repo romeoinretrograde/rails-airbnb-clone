@@ -10,6 +10,13 @@ class PigsController < ApplicationController
 
   def show
     @pig = Pig.find(params[:id])
+    @pig.geocode
+    @markers = [
+      {
+        lat: @pig.latitude,
+        lng: @pig.longitude
+      }
+    ]
   end
 
   def new
