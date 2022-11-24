@@ -10,11 +10,14 @@
   flex-grow: 0;
   align-content: center;
   height: 15%;
-  overflow: hidden;
 }
 
 // aqui é o icon do porco
 .navbar-pig .navbar-brand img {
   width: 50px;
   border-radius: 12px;
+}
+
+.dropdown-menu {
+  border-radius: 15px;
 }
