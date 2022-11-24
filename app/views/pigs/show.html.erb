@@ -3,7 +3,7 @@
     <div class="col col-lg-8">
       <div class="card-piggy">
         <%= cl_image_tag @pig.photo.key %>
-        <p class="card-piggy-price"><%#= @pig.price %> 7$</p>
+        <p class="card-piggy-price"><strong><%#= @pig.price %> 7 € </strong>/ per day</p>
       </div>
       <div class="about-piggy">
         <h3><strong>About</strong>:</h3>
@@ -29,7 +29,7 @@
           <label for="departure">Until</label>
           <input type="date" id="departure" class="form-control mb-3">
 
-          <input type="submit" class="form-control btn-primary">
+          <%= link_to "Book now", "#", class: "btn btn-flat" %>
         </form>
       </div>
     </div>
