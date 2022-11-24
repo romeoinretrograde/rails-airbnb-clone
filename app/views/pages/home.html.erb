@@ -1,12 +1,11 @@
 <%= render "shared/banner" %>
 <div class="container">
   <div class="intro">
-    <h6>Are you feeling down and would like some company?</h6>
-    <h6>Are you a pig lover like us, and would love to experience a day with one?</h6>
-    <h6>Wishing for an empathic companion for a day?</h6>
+
     <h2 class="mb-2 mt-5"><strong>Pick-A-Piggy</strong> noses out the perfect piggy for <strong>you!</strong></h3>
     <h3><i class="fa-solid fa-heart"></i></h3>
-    <h3 class="mb-5"><%= "#{@pigs[0].name}, #{@pigs[1].name} and #{@pigs[2].name} await your cuddles!" %></h3>
+    <h3 class="mb-5"><%= "#{@pigs[0].name}, #{@pigs[1].name} and #{@pigs[2].name} are some of the piggys that await your cuddles!" %></h3>
+
   </div>
 
   <div class="card-samples mb-5" id="sample-pigs">
@@ -29,4 +28,5 @@
           <% end %>
         <% end %>
       </div>
+      <h3 class = "h3-sign"><strong>Sign up</strong> to see all our piggys</h3>
 </div>
