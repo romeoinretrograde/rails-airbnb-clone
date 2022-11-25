@@ -1,0 +1,33 @@
+.dashboard-container {
+  margin-top: 50px;
+}
+
+.dashboard-items {
+  display: flex;
+  justify-content: space-between;
+  margin: 50px 5% 100px;
+}
+
+.my-pigs {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+  padding: 20px 25px 40px;
+  margin-left: 5%;
+  background-color: white;
+  box-shadow: $shadow;
+  border-radius: 20px;
+}
+
+.bookings-button {
+  width: 30%;
+  text-align: center;
+  border-radius: 30px;
+  margin: 10px auto 10px;
+  font-size: 20px;
+  padding: 10px;
+
+  a:hover {
+    color: white;
+  }
+}

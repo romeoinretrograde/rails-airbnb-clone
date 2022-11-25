@@ -1,0 +1,36 @@
+<div class="dashboard-container">
+  <div class="dashboard-header">
+  <h2>Dashboard</h2>
+  </div>
+  <div class="dashboard-items">
+    <div class="my-bookings">
+    <h3>My Bookings</h3>
+    </div>
+    <div class="my-pigs">
+      <h3>My Pigs</h3>
+        <div class="dashboard-cards-container">
+          <% @pigs.each do |pig| %>
+            <%= link_to pig_path(pig["id"]), class: "d-flex justify-content-center" do %>
+              <div class="card-pig card-shadow">
+                <div class="pig-image">
+                  <%= cl_image_tag pig.photo.key %>
+                </div>
+                <div class="card-pig-info">
+                  <div class="pig-name-details">
+                    <h2 style="text-align: left"><%= pig.name %></h2>
+                    <p style="text-align: left"><%= "#{pig.age} months · #{pig.breed}" %></p>
+                  </div>
+                  <div class="pig-price">
+                    <h2><%= "#{pig.price} €" %></h2>
+                  </div>
+                </div>
+              </div>
+            <% end %>
+            <div class="bookings-button btn-pink">
+            <%= link_to "Bookings", pig_bookings_path(pig["id"]) %>
+            </div>
+          <% end %>
+        </div>
+    </div>
+  </div>
+</div>
