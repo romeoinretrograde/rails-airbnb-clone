@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Booking.all
+    @bookings = Booking.where(pig_id: params[:pig_id])
+    @pig = Pig.find(params[:pig_id])
   end
 
   def new
@@ -13,7 +14,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to pig_bookings_path
+      redirect_to dashboard_path
     else
       render "pigs/show", status: :unprocessable_entity
     end

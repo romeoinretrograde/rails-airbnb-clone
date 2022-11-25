@@ -1,1 +1,27 @@
-blablabla
+<div class="index-bookings-container">
+  <div class="index-bookings-header">
+    <h1 class="d-flex justify-content-center"><%= "#{@pig.name}'s Bookings" %></h1>
+  </div>
+  <div class="index-bookings-items d-flex row justify-content-center">
+  <% @bookings.each do |booking| %>
+    <div class="index-booking-card">
+      <div class="index-booking-card-info">
+      <% @user = User.find(booking.user_id) %>
+      <div class="info-p">
+        <p><strong>User:</strong></p>
+        <p><%= @user.email %></p>
+      </div>
+      <div class="info-p">
+        <p><strong>Start Date:</strong></p>
+        <p><%= booking.start_date %></p>
+      </div>
+      <div class="info-p">
+        <p><strong>End Date:</strong></p>
+        <p><%= booking.end_date %></p>
+      </div>
+      </div>
+    </div>
+  <% end %>
+  <p><%= link_to "Back to Dashboard", dashboard_path, class:"btn-pink", style:"width:10%" %></p>
+  </div>
+</div>
