@@ -5,6 +5,21 @@
   <div class="dashboard-items">
     <div class="my-bookings">
     <h3>My Bookings</h3>
+    <% @bookings.each do |booking| %>
+      <% @pig = Pig.find(booking.pig_id) %>
+      <div class="my-booking-card">
+        <div class="my-booking-pic">
+        <%= cl_image_tag @pig.photo.key %>
+        </div>
+        <div class="my-booking-info">
+          <div><strong>Name:</strong> <%= @pig.name %></div>
+          <div><strong>Owner:</strong> <%= @pig.user.email %></div>
+          <div><strong>Start Date:</strong> <%= booking.start_date %></div>
+          <div style="margin-bottom:20px"><strong>End Date:</strong> <%= booking.end_date %></div>
+          <%= link_to "Message the Owner", "#", class:"btn-pink", style:"width:20%" %></p>
+        </div>
+      </div>
+    <% end %>
     </div>
     <div class="my-pigs">
       <h3>My Pigs</h3>

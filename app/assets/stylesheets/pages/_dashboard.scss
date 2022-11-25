@@ -31,3 +31,30 @@
     color: white;
   }
 }
+
+.my-bookings {
+  background-color: white;
+  box-shadow: $shadow;
+  border-radius: 20px;
+  padding: 20px 25px 40px;
+  width: 100%;
+}
+
+.my-booking-card {
+  display: flex;
+  background-color: white;
+  box-shadow: $shadow;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.my-booking-pic img {
+  height: 200px;
+  border-radius: 20px 0 0 20px
+}
+
+.my-booking-info {
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+}
