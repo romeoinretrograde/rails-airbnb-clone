@@ -23,8 +23,17 @@ pig_photos = ["https://res.cloudinary.com/dnk27mzjg/image/upload/v1669139361/pig
 puts "generating new pigs"
 
 10.times do |i|
+  puts "I'm opening the file"
   file = URI.open(pig_photos[i-1])
-  pig = Pig.new(name: Faker::Creature::Dog.name, age: rand(3..10), details: Faker::Lorem.sentence, breed: ["Pot Bellied", "Miniature", "Kune Kune"].sample, user: owner)
+  puts "I'm creating the pig"
+  pig = Pig.new(
+    name: Faker::Creature::Dog.name,
+    age: rand(3..10),
+    details: Faker::Lorem.sentence,
+    breed: ["Pot Bellied", "Miniature", "Kune Kune"].sample,
+    user: owner,
+    address: "Marques do Pombal, Lisbon")
+    puts "I'm attaching a photo"
   pig.photo.attach(io: file, filename: "piggy-#{i}", content_type: "image/png")
   puts pig.name
   pig.save
