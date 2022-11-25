@@ -76,6 +76,7 @@
   h3, p {
     text-align: left;
   }
+  height: 50vh;
 }
 
 .btn-ghost {
@@ -131,4 +132,6 @@
 
 .piggy-map {
   margin-top: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
