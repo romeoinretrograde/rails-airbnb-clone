@@ -21,18 +21,7 @@
 
         <div class="booking flex-grow-1 d-flex flex-column">
           <h2>Book your dates!</h2>
-
-          <form action="#" class="d-flex flex-column justify-content-between flex-grow-1">
-            <div>
-              <label for="arrival">From</label>
-              <input type="date" id="arrival" class="form-control mb-3">
-
-              <label for="departure">Until</label>
-              <input type="date" id="departure" class="form-control mb-3">
-            </div>
-
-            <%= link_to "Book now", "#", class: "btn btn-flat" %>
-          </form>
+            <%= render 'bookings/form', pig: @pig, booking: @booking %>
         </div>
       </div>
       <div class="piggy-map" style="width: 100%; height: 50vh;"
