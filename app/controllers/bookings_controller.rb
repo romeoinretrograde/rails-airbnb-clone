@@ -10,12 +10,12 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
     @booking.pig = Pig.find(params[:pig_id])
-    @booking.user = User.find(params[:user_id])
+    @booking.user = current_user
 
     if @booking.save
-      redirect_to pig_path(@booking.pig)
+      redirect_to pig_bookings_path
     else
-      render pig_path(@booking.pig), status: :unprocessable_entity
+      render "pigs/show", status: :unprocessable_entity
     end
   end
 
@@ -28,6 +28,6 @@ class BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:date, :status, :pig_id, :user_id)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end
