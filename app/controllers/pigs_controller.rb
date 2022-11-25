@@ -17,6 +17,7 @@ class PigsController < ApplicationController
         lng: @pig.longitude
       }
     ]
+    @booking = Booking.new
   end
 
   def new
