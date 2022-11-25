@@ -9,3 +9,12 @@
   background: #AD7AB4;
   color: white;
 }
+
+.btn-aux {
+  background: none;
+  text-decoration: underline $pink;
+  &:hover {
+    font-weight: bold;
+    color: $black;
+  }
+}
